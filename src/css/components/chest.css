@@ -4,8 +4,19 @@ section.chest {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 }
 
 .chest-image-container {
   max-width: 13rem;
+}
+
+.chest-open-button {
+  font-size: 1.3rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--button-border-radius);
+  border: var(--button-border);
+  background-color: var(--button-background-color);
+  color: var(--body-background-color);
+  cursor: pointer;
 }
