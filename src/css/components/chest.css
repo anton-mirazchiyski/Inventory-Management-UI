@@ -9,6 +9,7 @@ section.chest {
 
 .chest-image-container {
   max-width: 13rem;
+  cursor: pointer;
 }
 
 .chest-open-button {
@@ -19,4 +20,17 @@ section.chest {
   background-color: var(--button-background-color);
   color: var(--body-background-color);
   cursor: pointer;
+}
+
+.chest .chest-tooltip {
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 0.9rem;
+  position: absolute;
+  background-color: #fff;
+  max-width: 12rem;
+}
+
+.chest .hidden-text {
+  visibility: hidden;
 }
