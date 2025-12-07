@@ -9,9 +9,17 @@ class Chest {
     opened: 'assets/images/chest-opened.png'
   };
 
+  lootCategories = ['armor', 'weapons', 'potions', 'shields'];
+
+  lootRarityTypes = ['normal', 'rare'];
+
   open() {
     chestImage.src = this.chestStates['opened'];
     chestImage.alt = 'opened-chest';
+  }
+
+  pickRandomLootCategory() {
+    return this.lootCategories[Math.floor(Math.random() * this.lootCategories.length)];
   }
 }
 
@@ -19,6 +27,8 @@ const chest = new Chest();
 
 openChestButton.addEventListener('click', () => {
   chest.open()
+  const itemCategory = chest.pickRandomLootCategory();
+  console.log(itemCategory);
 });
 
 chestImage.addEventListener('mouseenter', showChestText);
