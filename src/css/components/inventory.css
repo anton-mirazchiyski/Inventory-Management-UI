@@ -1,0 +1,26 @@
+.inventory {
+  margin-top: var(--section-margin-top);
+  padding: var(--section-side-padding-mobile);
+}
+
+.inventory-items {
+  cursor: pointer;
+}
+
+.inventory-items-list {
+  border: 2px solid #000;
+  border-radius: 5px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 60px);
+  gap: 0.7rem;
+  max-width: 25rem;
+  background-color: rgb(244, 242, 242);
+}
+
+li.item-slot {
+  border: 2px solid gray;
+  background-color: rgb(147, 145, 145);
+  border-radius: 4px;
+}
