@@ -11,7 +11,8 @@ class Chest {
     opened: 'assets/images/chest-opened.png'
   };
 
-  lootCategories = ['armor', 'weapons', 'potions', 'shields'];
+  // lootCategories = ['armor', 'weapons', 'potions', 'shields'];
+  lootCategories = ['armor'];
 
   lootRarityTypes = ['normal', 'rare'];
 
@@ -32,6 +33,7 @@ openChestButton.addEventListener('click', () => {
   const itemCategory = chest.pickRandomLootCategory();
   const item = createItem(itemCategory);
   console.log(item);
+  showLootClaimBox(item);
 });
 
 chestImage.addEventListener('mouseenter', showChestText);
@@ -51,4 +53,19 @@ function createItem(itemCategory) {
     case 'armor':
       return ArmorItem.createRandomItem();
   }
+}
+
+function showLootClaimBox(loot) {
+  const lootClaimBox = document.createElement('div');
+  lootClaimBox.classList.add('loot-claim-box');
+
+  const itemContainer = document.createElement('div');
+  itemContainer.classList.add('claim-item-container');
+  const imageElement = document.createElement('img');
+  imageElement.src = loot['icon'];
+  imageElement.alt = 'item-icon';
+  itemContainer.appendChild(imageElement);
+  lootClaimBox.appendChild(itemContainer);
+
+  document.body.appendChild(lootClaimBox);
 }
