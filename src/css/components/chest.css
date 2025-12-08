@@ -50,10 +50,29 @@ section.chest {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4rem;
+  box-shadow: 0 0 0 3px var(--loot-claim-box-color);
 }
 
 .claim-item-container {
   max-width: 5rem;
   border: 3px solid goldenrod;
   border-radius: 6px;
+}
+
+.claim-item-button {
+  padding: 0.4rem 0.9rem;
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 3px solid #000;
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-background-color);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 4px 2px var(--button-background-color);
+}
+
+.claim-item-button:hover {
+  background-color: rgb(156, 27, 27);
 }

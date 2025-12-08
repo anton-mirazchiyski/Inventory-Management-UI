@@ -67,5 +67,12 @@ function showLootClaimBox(loot) {
   itemContainer.appendChild(imageElement);
   lootClaimBox.appendChild(itemContainer);
 
+  const buttonsContainer = document.createElement('div');
+  const claimItemButton = document.createElement('button');
+  claimItemButton.textContent = 'Claim Item';
+  claimItemButton.classList.add('claim-item-button');
+  buttonsContainer.appendChild(claimItemButton);
+  lootClaimBox.appendChild(buttonsContainer);
+
   document.body.appendChild(lootClaimBox);
 }
