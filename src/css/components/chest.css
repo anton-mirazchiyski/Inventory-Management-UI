@@ -34,3 +34,26 @@ section.chest {
 .chest .hidden-text {
   visibility: hidden;
 }
+
+.loot-claim-box {
+  min-width: 17rem;
+  min-height: 17rem;
+  border: 4px solid #000;
+  border-radius: 6px;
+  padding: 1.5rem;
+  position: absolute;
+  top: 20rem;
+  left: 4rem;
+  z-index: 10;
+  background-color: var(--loot-claim-box-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.claim-item-container {
+  max-width: 5rem;
+  border: 3px solid goldenrod;
+  border-radius: 6px;
+}
