@@ -1,3 +1,5 @@
+import { ArmorItem } from "./item.js";
+
 const openChestButton = document.querySelector('button.chest-open-button');
 const chestImage = document.querySelector('.chest-image-container > img');
 const chestText = document.querySelector('section.chest .chest-tooltip');
@@ -26,9 +28,10 @@ class Chest {
 const chest = new Chest();
 
 openChestButton.addEventListener('click', () => {
-  chest.open()
+  chest.open();
   const itemCategory = chest.pickRandomLootCategory();
-  console.log(itemCategory);
+  const item = createItem(itemCategory);
+  console.log(item);
 });
 
 chestImage.addEventListener('mouseenter', showChestText);
@@ -41,4 +44,11 @@ function showChestText() {
 
 function hideChestText() {
   chestText.classList.add('hidden-text');
+}
+
+function createItem(itemCategory) {
+  switch(itemCategory) {
+    case 'armor':
+      return ArmorItem.createRandomItem();
+  }
 }
