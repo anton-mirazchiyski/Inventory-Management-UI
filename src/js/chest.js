@@ -59,13 +59,18 @@ function showLootClaimBox(loot) {
   const lootClaimBox = document.createElement('div');
   lootClaimBox.classList.add('loot-claim-box');
 
-  const itemContainer = document.createElement('div');
-  itemContainer.classList.add('claim-item-container');
+  const iconContainer = document.createElement('div');
+  iconContainer.classList.add('claim-item-container');
   const imageElement = document.createElement('img');
   imageElement.src = loot['icon'];
   imageElement.alt = 'item-icon';
-  itemContainer.appendChild(imageElement);
-  lootClaimBox.appendChild(itemContainer);
+  iconContainer.appendChild(imageElement);
+  lootClaimBox.appendChild(iconContainer);
+
+  const descriptionParagraph = document.createElement('p');
+  descriptionParagraph.textContent = loot['description'];
+  descriptionParagraph.classList.add('item-description');
+  lootClaimBox.appendChild(descriptionParagraph);
 
   const buttonsContainer = document.createElement('div');
   const claimItemButton = document.createElement('button');

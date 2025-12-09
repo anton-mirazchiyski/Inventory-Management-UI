@@ -11,7 +11,7 @@ export class ArmorItem {
   static descriptions = {
     head: ['A helm, worthy for a hero.'],
     shoulders: ['An essential part of a warrior\'s armor.'],
-    torso: ['It protects from devastating blows.'],
+    torso: ['It protects from devastating blows..'],
     legs: ['A strong armor for the legs.'],
     hands: ['Iron fists, to complement your gear.']
   };
