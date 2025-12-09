@@ -1,4 +1,5 @@
 import { ArmorItem } from "./item.js";
+import { createItemTooltip } from "./inventory.js";
 
 const openChestButton = document.querySelector('button.chest-open-button');
 const chestImage = document.querySelector('.chest-image-container > img');
@@ -87,6 +88,7 @@ function showLootClaimBox(loot) {
     moveItemToInventory(loot);
     closeLootClaimBox(lootClaimBox);
     chest.close();
+    createItemTooltip(loot);
   });
 
   document.body.appendChild(lootClaimBox);
