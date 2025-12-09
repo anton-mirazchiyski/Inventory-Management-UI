@@ -45,3 +45,7 @@ li.occupied-slot {
   padding: 1.5rem;
   font-size: 1.1rem;
 }
+
+.hidden-item-tooltip {
+  display: none;
+}

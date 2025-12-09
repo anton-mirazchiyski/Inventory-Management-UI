@@ -2,7 +2,7 @@ export function createItemTooltip(item) {
   const lastOcupiedItemSlot = Array.from(document.querySelectorAll('.inventory-items-list .occupied-slot'))
                                   .reverse()[0];
   const tooltipContainer = document.createElement('div');
-  tooltipContainer.classList.add('item-tooltip');
+  tooltipContainer.classList.add('item-tooltip', 'hidden-item-tooltip');
 
   const itemTypeSpan = document.createElement('span');
   itemTypeSpan.textContent = item['type'][0].toUpperCase() + item['type'].substring(1,) + ' armor';
@@ -21,5 +21,20 @@ export function createItemTooltip(item) {
 
   lastOcupiedItemSlot.appendChild(tooltipContainer);
 
-  console.log(item);
+  lastOcupiedItemSlot.addEventListener('mouseenter', () => {
+    showItemTooltip(tooltipContainer);
+  });
+
+  lastOcupiedItemSlot.addEventListener('mouseleave', () => {
+    hideItemTooltip(tooltipContainer);
+  });
+}
+
+
+function showItemTooltip(tooltipContainer) {
+  tooltipContainer.classList.remove('hidden-item-tooltip');
+}
+
+function hideItemTooltip(tooltipContainer) {
+  tooltipContainer.classList.add('hidden-item-tooltip');
 }
