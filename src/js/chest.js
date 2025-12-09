@@ -21,6 +21,11 @@ class Chest {
     chestImage.alt = 'opened-chest';
   }
 
+  close() {
+    chestImage.src = this.chestStates['closed'];
+    chestImage.alt = 'closed-chest';
+  }
+
   pickRandomLootCategory() {
     return this.lootCategories[Math.floor(Math.random() * this.lootCategories.length)];
   }
@@ -32,7 +37,7 @@ openChestButton.addEventListener('click', () => {
   chest.open();
   const itemCategory = chest.pickRandomLootCategory();
   const item = createItem(itemCategory);
-  console.log(item);
+  // console.log(item);
   showLootClaimBox(item);
 });
 
@@ -81,6 +86,7 @@ function showLootClaimBox(loot) {
   claimItemButton.addEventListener('click', () => {
     moveItemToInventory(loot);
     closeLootClaimBox(lootClaimBox);
+    chest.close();
   });
 
   document.body.appendChild(lootClaimBox);
