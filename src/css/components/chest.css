@@ -37,6 +37,7 @@ section.chest {
 
 .loot-claim-box {
   min-width: 17rem;
+  max-width: 17rem;
   min-height: 17rem;
   border: 4px solid #000;
   border-radius: 6px;

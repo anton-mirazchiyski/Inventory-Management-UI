@@ -78,6 +78,24 @@ function showLootClaimBox(loot) {
   claimItemButton.classList.add('claim-item-button');
   buttonsContainer.appendChild(claimItemButton);
   lootClaimBox.appendChild(buttonsContainer);
+  claimItemButton.addEventListener('click', () => {
+    moveItemToInventory(loot);
+    closeLootClaimBox(lootClaimBox);
+  });
 
   document.body.appendChild(lootClaimBox);
+}
+
+function moveItemToInventory(item) {
+  const firstEmptySlot = document.querySelector('.inventory-items-list .empty-slot');
+  const imageElement = document.createElement('img');
+  imageElement.src = item['icon'];
+  imageElement.alt = 'inventory-item-icon';
+  firstEmptySlot.appendChild(imageElement);
+  firstEmptySlot.classList.remove('empty-slot');
+  firstEmptySlot.classList.add('occupied-slot');
+}
+
+function closeLootClaimBox(lootClaimBox) {
+  lootClaimBox.remove();
 }
