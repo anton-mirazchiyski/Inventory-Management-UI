@@ -1,12 +1,8 @@
 export class ArmorItem {
   // static armorTypes = ['head', 'shoulders', 'torso', 'legs', 'hands'];
-  static armorTypes = ['torso'];
+  static armorTypes = ['chest'];
 
   static armorRatings = [5, 10, 20, 35, 47];
-
-  static armorIcons = {
-    torso: ['assets/images/armor/torso/chest-armor.png',]
-  };
 
   static descriptions = {
     head: ['A helm, worthy for a hero.'],
@@ -22,22 +18,30 @@ export class ArmorItem {
     this.icon = icon;
     this.description = description;
   }
+}
+
+
+export class ChestArmor extends ArmorItem {
+  static armorType = 'chest';
+
+  static icons = [
+    'assets/images/armor/torso/chest-armor.png',
+  ];
+
+  static descriptions = [
+    'It protects from devastating blows..',
+  ];
 
   static createRandomItem() {
-    const randomArmorType = this.armorTypes[Math.floor(Math.random() * this.armorTypes.length)];
     const randomArmorRating = this.armorRatings[Math.floor(Math.random() * this.armorRatings.length)];
+    const randomIcon = this.icons[Math.floor(Math.random() * this.icons.length)];
+    const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
 
-    const iconsCount = this.armorIcons[randomArmorType].length;
-    const randomArmorIcon = this.armorIcons[randomArmorType][Math.floor(Math.random() * iconsCount)];
-
-    const descriptionsCount = this.descriptions[randomArmorType].length;
-    const randomItemDescription = this.descriptions[randomArmorType][Math.floor(Math.random() * descriptionsCount)];
-
-    return new ArmorItem(
-      randomArmorType,
+    return new ChestArmor(
+      this.armorType,
       randomArmorRating,
-      randomArmorIcon,
-      randomItemDescription
+      randomIcon,
+      randomDescription
     );
   }
 }
