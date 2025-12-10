@@ -1,6 +1,7 @@
 .inventory {
   margin-top: var(--section-margin-top);
   padding: var(--section-side-padding-mobile);
+  margin-bottom: 3rem;
 }
 
 .inventory-items {
@@ -15,7 +16,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 0.7rem;
-  max-width: 25rem;
+  max-width: 20rem;
   min-height: 20rem;
   background-color: rgb(244, 242, 242);
 }
@@ -48,4 +49,10 @@ li.occupied-slot {
 
 .hidden-item-tooltip {
   display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .inventory {
+    padding: var(--section-side-padding-desktop);
+  }
 }

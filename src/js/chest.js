@@ -2,6 +2,7 @@ import { ArmorItem } from "./item.js";
 import { createItemTooltip } from "./inventory.js";
 
 const openChestButton = document.querySelector('button.chest-open-button');
+const chestSection = document.querySelector('section.chest');
 const chestImage = document.querySelector('.chest-image-container > img');
 const chestText = document.querySelector('section.chest .chest-tooltip');
 const chestImageContainer = document.querySelector('.chest-image-container');
@@ -91,7 +92,7 @@ function showLootClaimBox(loot) {
     createItemTooltip(loot);
   });
 
-  document.body.appendChild(lootClaimBox);
+  chestSection.appendChild(lootClaimBox);
 }
 
 function moveItemToInventory(item) {

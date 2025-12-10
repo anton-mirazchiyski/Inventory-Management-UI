@@ -1,5 +1,6 @@
 :root {
   --section-side-padding-mobile: 0 2.5rem;
+  --section-side-padding-desktop: 0 5rem;
   --section-margin-top: 3rem;
 
   --body-background-color: #fdf6f6;
@@ -10,7 +11,3 @@
 
   --loot-claim-box-color: rgb(3, 3, 86);
 }
-
-/*
-#fdf6f6
-*/

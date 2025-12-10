@@ -5,6 +5,7 @@ section.chest {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  position: relative;
 }
 
 .chest-image-container {
@@ -43,7 +44,7 @@ section.chest {
   border-radius: 6px;
   padding: 1.5rem;
   position: absolute;
-  top: 20rem;
+  top: 17rem;
   left: 4rem;
   z-index: 10;
   background-color: var(--loot-claim-box-color);
@@ -52,7 +53,6 @@ section.chest {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* gap: 4rem; */
   box-shadow: 0 0 0 3px var(--loot-claim-box-color);
 }
 
@@ -82,4 +82,17 @@ section.chest {
 
 .claim-item-button:hover {
   background-color: rgb(156, 27, 27);
+}
+
+@media screen and (min-width: 1024px) {
+  section.chest {
+    padding: var(--section-side-padding-desktop);
+  }
+
+  .loot-claim-box {
+    left: 38rem;
+    min-width: 19rem;
+    max-width: 19rem;
+    min-height: 19rem;
+  }
 }
