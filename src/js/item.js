@@ -1,16 +1,8 @@
 export class ArmorItem {
   // static armorTypes = ['head', 'shoulders', 'torso', 'legs', 'hands'];
-  static armorTypes = ['chest'];
+  static armorTypes = ['chest', 'hands'];
 
   static armorRatings = [5, 10, 20, 35, 47];
-
-  static descriptions = {
-    head: ['A helm, worthy for a hero.'],
-    shoulders: ['An essential part of a warrior\'s armor.'],
-    torso: ['It protects from devastating blows..'],
-    legs: ['A strong armor for the legs.'],
-    hands: ['Iron fists, to complement your gear.']
-  };
 
   constructor(type, rating, icon, description) {
     this.type = type;
@@ -26,10 +18,13 @@ export class ChestArmor extends ArmorItem {
 
   static icons = [
     'assets/images/armor/torso/chest-armor.png',
+    'assets/images/armor/torso/abdominal-armor.png',
+    'assets/images/armor/torso/chain-mail.png',
   ];
 
   static descriptions = [
     'It protects from devastating blows..',
+    'An essential part of a warrior\'s equipment.'
   ];
 
   static createRandomItem() {
@@ -38,6 +33,35 @@ export class ChestArmor extends ArmorItem {
     const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
 
     return new ChestArmor(
+      this.armorType,
+      randomArmorRating,
+      randomIcon,
+      randomDescription
+    );
+  }
+}
+
+
+export class HandsArmor extends ArmorItem {
+  static armorType = 'hands';
+
+  static icons = [
+    'assets/images/armor/hands/mailed-fist.png',
+    'assets/images/armor/hands/gloves.png',
+  ];
+
+  static descriptions = [
+    'Iron fists, to complement your gear.',
+    'Reinforced gloves, for a stronger grip.',
+    'Gloves of reinforced steel.'
+  ];
+
+  static createRandomItem() {
+    const randomArmorRating = this.armorRatings[Math.floor(Math.random() * this.armorRatings.length)];
+    const randomIcon = this.icons[Math.floor(Math.random() * this.icons.length)];
+    const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
+
+    return new HandsArmor(
       this.armorType,
       randomArmorRating,
       randomIcon,

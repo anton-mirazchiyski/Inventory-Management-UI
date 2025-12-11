@@ -1,4 +1,4 @@
-import { ArmorItem, ChestArmor } from "./item.js";
+import { ArmorItem, ChestArmor, HandsArmor } from "./item.js";
 import { createItemTooltip } from "./inventory.js";
 
 const openChestButton = document.querySelector('button.chest-open-button');
@@ -62,9 +62,10 @@ function createItem(itemCategory) {
       switch (randomArmorType) {
         case 'chest':
           return ChestArmor.createRandomItem();
+        case 'hands':
+          return HandsArmor.createRandomItem();
       }
   }
-  return item;
 }
 
 function showLootClaimBox(loot) {
