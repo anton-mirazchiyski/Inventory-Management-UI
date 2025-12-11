@@ -74,6 +74,15 @@ function showLootClaimBox(loot) {
   const lootClaimBox = document.createElement('div');
   lootClaimBox.classList.add('loot-claim-box');
 
+  const closeBoxButton = document.createElement('span');
+  closeBoxButton.innerHTML = '<i class="bi bi-x"></i>';
+  closeBoxButton.classList.add('claim-box-close-button');
+  closeBoxButton.addEventListener('click', () => {
+    closeLootClaimBox(lootClaimBox);
+    chest.close();
+  });
+  lootClaimBox.appendChild(closeBoxButton);
+
   const iconContainer = document.createElement('div');
   iconContainer.classList.add('claim-item-container');
   const imageElement = document.createElement('img');
