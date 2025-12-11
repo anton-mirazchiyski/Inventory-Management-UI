@@ -1,4 +1,4 @@
-import { ArmorItem, ChestArmor, HandsArmor } from "./item.js";
+import { ArmorItem, ChestArmor, HandsArmor, ShouldersArmor } from "./item.js";
 import { createItemTooltip } from "./inventory.js";
 
 const openChestButton = document.querySelector('button.chest-open-button');
@@ -64,6 +64,8 @@ function createItem(itemCategory) {
           return ChestArmor.createRandomItem();
         case 'hands':
           return HandsArmor.createRandomItem();
+        case 'shoulders':
+          return ShouldersArmor.createRandomItem();
       }
   }
 }

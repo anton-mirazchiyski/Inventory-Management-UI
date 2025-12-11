@@ -1,6 +1,5 @@
 export class ArmorItem {
-  // static armorTypes = ['head', 'shoulders', 'torso', 'legs', 'hands'];
-  static armorTypes = ['chest', 'hands'];
+  static armorTypes = ['shoulders', 'chest', 'hands'];
 
   static armorRatings = [5, 10, 20, 35, 47];
 
@@ -62,6 +61,34 @@ export class HandsArmor extends ArmorItem {
     const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
 
     return new HandsArmor(
+      this.armorType,
+      randomArmorRating,
+      randomIcon,
+      randomDescription
+    );
+  }
+}
+
+
+export class ShouldersArmor extends ArmorItem {
+  static armorType = 'shoulders';
+
+  static icons = [
+    'assets/images/armor/shoulders/pauldrons.png',
+    'assets/images/armor/shoulders/shoulder-armor.png',
+  ];
+
+  static descriptions = [
+    'An essential part of a warrior\'s armor.',
+    'A good protection for the shoulders.'
+  ];
+
+  static createRandomItem() {
+    const randomArmorRating = this.armorRatings[Math.floor(Math.random() * this.armorRatings.length)];
+    const randomIcon = this.icons[Math.floor(Math.random() * this.icons.length)];
+    const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
+
+    return new ShouldersArmor(
       this.armorType,
       randomArmorRating,
       randomIcon,
