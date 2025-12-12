@@ -4,6 +4,10 @@
   margin-bottom: 3rem;
 }
 
+.inventory > h2 {
+  margin-bottom: 0.5rem;
+}
+
 .inventory-items {
   cursor: pointer;
 }
@@ -13,11 +17,11 @@
   border-radius: 5px;
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   gap: 0.7rem;
-  max-width: 20rem;
-  min-height: 20rem;
+  max-width: 14rem;
+  min-height: 43rem;
   background-color: rgb(244, 242, 242);
 }
 
@@ -54,5 +58,12 @@ li.occupied-slot {
 @media screen and (min-width: 1024px) {
   .inventory {
     padding: var(--section-side-padding-desktop);
+  }
+
+  .inventory-items-list {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    max-width: 25.2rem;
+    min-height: 25.2rem;
   }
 }
