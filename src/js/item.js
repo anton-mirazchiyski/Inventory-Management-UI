@@ -1,3 +1,5 @@
+import { getRandomItemData } from "./utils.js";
+
 export class ArmorItem {
   static armorTypes = ['shoulders', 'chest', 'hands'];
 
@@ -27,16 +29,9 @@ export class ChestArmor extends ArmorItem {
   ];
 
   static createRandomItem() {
-    const randomArmorRating = this.armorRatings[Math.floor(Math.random() * this.armorRatings.length)];
-    const randomIcon = this.icons[Math.floor(Math.random() * this.icons.length)];
-    const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
+    const itemData = getRandomItemData(this.armorType, this.armorRatings, this.icons, this.descriptions);
 
-    return new ChestArmor(
-      this.armorType,
-      randomArmorRating,
-      randomIcon,
-      randomDescription
-    );
+    return new ChestArmor(...itemData);
   }
 }
 
@@ -56,16 +51,9 @@ export class HandsArmor extends ArmorItem {
   ];
 
   static createRandomItem() {
-    const randomArmorRating = this.armorRatings[Math.floor(Math.random() * this.armorRatings.length)];
-    const randomIcon = this.icons[Math.floor(Math.random() * this.icons.length)];
-    const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
+    const itemData = getRandomItemData(this.armorType, this.armorRatings, this.icons, this.descriptions);
 
-    return new HandsArmor(
-      this.armorType,
-      randomArmorRating,
-      randomIcon,
-      randomDescription
-    );
+    return new HandsArmor(...itemData);
   }
 }
 
@@ -84,15 +72,8 @@ export class ShouldersArmor extends ArmorItem {
   ];
 
   static createRandomItem() {
-    const randomArmorRating = this.armorRatings[Math.floor(Math.random() * this.armorRatings.length)];
-    const randomIcon = this.icons[Math.floor(Math.random() * this.icons.length)];
-    const randomDescription = this.descriptions[Math.floor(Math.random() * this.descriptions.length)];
+    const itemData = getRandomItemData(this.armorType, this.armorRatings, this.icons, this.descriptions);
 
-    return new ShouldersArmor(
-      this.armorType,
-      randomArmorRating,
-      randomIcon,
-      randomDescription
-    );
+    return new ShouldersArmor(...itemData);
   }
 }
