@@ -1,4 +1,4 @@
-import { getRandomItemData } from "./utils.js";
+import { getRandomItemData } from "../utils.js";
 
 export class ArmorItem {
   static armorTypes = ['shoulders', 'chest', 'hands'];
