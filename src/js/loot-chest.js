@@ -1,4 +1,4 @@
-import { ArmorItem, ChestArmor, HandsArmor, ShouldersArmor } from "./items/armor.js";
+import { ArmorItem, ChestArmor, FootArmor, HandsArmor, HeadArmor, LegsArmor, ShouldersArmor } from "./items/armor.js";
 import { showLootClaimBox } from "./loot-claim-box.js";
 import { getRandomArrayIndex } from "./utils.js";
 
@@ -34,14 +34,14 @@ export const chest = new Chest();
 
 openChestButton.addEventListener('click', () => {
   chest.open();
-  const itemCategory = chest.pickRandomLootCategory();
-  const item = determineChestLoot(itemCategory);
+  const item = determineChestLoot();
   showLootClaimBox(item);
 });
 
-function determineChestLoot(itemCategory) {
-  switch(itemCategory) {
-    case 'armor':
+function determineChestLoot() {
+  const itemCategory = chest.pickRandomLootCategory();
+
+  if (itemCategory === 'armor') {
       const randomArmorType = ArmorItem.armorTypes[getRandomArrayIndex(ArmorItem.armorTypes)];
       switch (randomArmorType) {
         case 'chest':
@@ -50,6 +50,12 @@ function determineChestLoot(itemCategory) {
           return HandsArmor.createRandomItem();
         case 'shoulders':
           return ShouldersArmor.createRandomItem();
+        case 'head':
+          return HeadArmor.createRandomItem();
+        case 'legs':
+          return LegsArmor.createRandomItem();
+        case 'feet':
+          return FootArmor.createRandomItem();
       }
   }
 }

@@ -1,7 +1,7 @@
 import { getRandomItemData } from "../utils.js";
 
 export class ArmorItem {
-  static armorTypes = ['shoulders', 'chest', 'hands'];
+  static armorTypes = ['head', 'shoulders', 'chest', 'hands', 'legs', 'feet'];
 
   static armorRatings = [5, 10, 20, 35, 47];
 
@@ -75,5 +75,65 @@ export class ShouldersArmor extends ArmorItem {
     const itemData = getRandomItemData(this.armorType, this.armorRatings, this.icons, this.descriptions);
 
     return new ShouldersArmor(...itemData);
+  }
+}
+
+
+export class HeadArmor extends ArmorItem {
+  static armorType = 'head';
+
+  static icons = [
+    'assets/images/armor/head/light-helm.png',
+    'assets/images/armor/head/heavy-helm.png',
+  ];
+
+  static descriptions = [
+    'A helm, worthy for a hero.'
+  ];
+
+  static createRandomItem() {
+    const itemData = getRandomItemData(this.armorType, this.armorRatings, this.icons, this.descriptions);
+
+    return new HeadArmor(...itemData);
+  }
+}
+
+
+export class LegsArmor extends ArmorItem {
+  static armorType = 'legs';
+
+  static icons = [
+    'assets/images/armor/legs/armored-pants.png',
+    'assets/images/armor/legs/metal-skirt.png',
+  ];
+
+  static descriptions = [
+    'A strong armor for the legs.'
+  ];
+
+  static createRandomItem() {
+    const itemData = getRandomItemData(this.armorType, this.armorRatings, this.icons, this.descriptions);
+
+    return new LegsArmor(...itemData);
+  }
+}
+
+
+export class FootArmor extends ArmorItem {
+  static armorType = 'foot';
+
+  static icons = [
+    'assets/images/armor/feet/leg-armor.png',
+    'assets/images/armor/feet/steeltoe-boots.png',
+  ];
+
+  static descriptions = [
+    'Steel sabatons.'
+  ];
+
+  static createRandomItem() {
+    const itemData = getRandomItemData(this.armorType, this.armorRatings, this.icons, this.descriptions);
+
+    return new FootArmor(...itemData);
   }
 }
