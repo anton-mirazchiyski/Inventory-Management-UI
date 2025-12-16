@@ -55,6 +55,12 @@ li.occupied-slot {
   display: none;
 }
 
+.moving-icon {
+  position: absolute;
+  border: 3px solid goldenrod;
+  cursor: grab;
+}
+
 @media screen and (min-width: 1024px) {
   .inventory {
     padding: var(--section-side-padding-desktop);
