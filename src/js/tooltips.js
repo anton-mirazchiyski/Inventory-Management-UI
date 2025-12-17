@@ -3,8 +3,8 @@ const chestText = document.querySelector('section.chest .chest-tooltip');
 const chestImageContainer = document.querySelector('.chest-image-container');
 
 export function createItemTooltip(item) {
-  const lastOcupiedItemSlot = Array.from(document.querySelectorAll('.inventory-items-list .occupied-slot'))
-                                  .reverse()[0];
+  const lastOcupiedItemSlot = findLastOccupiedItemSlot();
+
   const tooltipContainer = document.createElement('div');
   tooltipContainer.classList.add('item-tooltip', 'hidden-item-tooltip');
 
@@ -25,22 +25,22 @@ export function createItemTooltip(item) {
 
   lastOcupiedItemSlot.appendChild(tooltipContainer);
 
-  lastOcupiedItemSlot.addEventListener('mouseenter', () => {
-    showItemTooltip(tooltipContainer);
-  });
-
-  lastOcupiedItemSlot.addEventListener('mouseleave', () => {
-    hideItemTooltip(tooltipContainer);
-  });
+  lastOcupiedItemSlot.addEventListener('mouseenter', showItemTooltip);
+  lastOcupiedItemSlot.addEventListener('mouseleave', hideItemTooltip);
 }
 
-
-function showItemTooltip(tooltipContainer) {
-  tooltipContainer.classList.remove('hidden-item-tooltip');
+export function showItemTooltip(event) {
+  event.target.querySelector('.item-tooltip').classList.remove('hidden-item-tooltip');
 }
 
-function hideItemTooltip(tooltipContainer) {
-  tooltipContainer.classList.add('hidden-item-tooltip');
+export function hideItemTooltip(event) {
+  event.target.querySelector('.item-tooltip').classList.add('hidden-item-tooltip');
+}
+
+function findLastOccupiedItemSlot() {
+  const occupiedSlots = Array.from(document.querySelectorAll('.inventory-items-list .occupied-slot'));
+
+  return occupiedSlots.find(occupiedSlot => Array.from(occupiedSlot.children).length == 1);
 }
 
 chestImage.addEventListener('mouseenter', showChestText);
