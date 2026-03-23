@@ -104,6 +104,11 @@ section.chest {
   box-shadow: 0 0 4px 2px var(--button-background-color);
 }
 
+.chest-open-button:hover {
+  background-color: brown;
+  box-shadow: 0 0 3px 1px #000;
+}
+
 @media screen and (min-width: 1024px) {
   section.chest {
     padding: var(--section-side-padding-desktop);
