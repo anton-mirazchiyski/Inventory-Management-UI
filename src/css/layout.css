@@ -1,0 +1,23 @@
+@media screen and (min-width: 1024px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      ". loot-chest equipment"
+      "inventory inventory equipment"
+      ". . equipment";
+  }
+
+  .chest {
+    grid-area: loot-chest;
+  }
+
+  .inventory {
+    grid-area: inventory;
+  }
+
+  .equipment {
+    grid-area: equipment;
+  }
+}
