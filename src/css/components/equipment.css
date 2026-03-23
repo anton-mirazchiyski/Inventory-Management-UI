@@ -1,10 +1,28 @@
 .equipment {
   padding: var(--section-side-padding-mobile);
   margin-top: var(--section-margin-top);
+  max-width: 25rem;
 }
 
 .equipment > h2 {
   margin-bottom: 1.3rem;
+}
+
+.equipment > .info {
+  display: flex;
+  margin-bottom: 1.3rem;
+  justify-content: space-between;
+}
+
+.hide-equipment-button {
+  background-color: rgb(160, 201, 214);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+  padding: 0.4rem 1.1rem;
+  border: var(--button-border);
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
 }
 
 .equipment-slots {
@@ -19,6 +37,10 @@
   gap: 1.5rem;
   max-width: 20rem;
   cursor: pointer;
+}
+
+.hidden-equipment {
+  display: none;
 }
 
 .equipment-slots span {
@@ -65,4 +87,8 @@
 
 .weapon {
   grid-area: weapon;
+}
+
+.hide-equipment-button:hover {
+  background-color: rgb(133, 195, 215);
 }
