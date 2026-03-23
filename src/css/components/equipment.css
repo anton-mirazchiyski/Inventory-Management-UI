@@ -1,0 +1,68 @@
+.equipment {
+  padding: var(--section-side-padding-mobile);
+  margin-top: var(--section-margin-top);
+}
+
+.equipment > h2 {
+  margin-bottom: 1.3rem;
+}
+
+.equipment-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "shoulders head neck"
+    "weapon chest hands"
+    ". legs ."
+    ". feet .";
+  gap: 1.5rem;
+  max-width: 20rem;
+  cursor: pointer;
+}
+
+.equipment-slots span {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 1.15rem;
+}
+
+.equipment-slot {
+  max-width: 4.3rem;
+  min-height: 4.3rem;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: rgb(177, 90, 90);
+}
+
+.head {
+  grid-area: head;
+}
+
+.shoulders {
+  grid-area: shoulders;
+}
+
+.hands {
+  grid-area: hands;
+}
+
+.chest-part {
+  grid-area: chest;
+}
+
+.legs {
+  grid-area: legs;
+}
+
+.feet {
+  grid-area: feet;
+}
+
+.neck {
+  grid-area: neck;
+}
+
+.weapon {
+  grid-area: weapon;
+}
