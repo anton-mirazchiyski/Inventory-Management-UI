@@ -8,7 +8,7 @@ This project focuses on building core game-like systems using JavaScript, includ
 
 <br>
 
-![InventoryAnimation](https://github.com/user-attachments/assets/af9012b2-e862-470a-89be-9c9b95420638)
+![](https://github.com/anton-mirazchiyski/Inventory-Management-UI/blob/main/README-assets/demo.gif)
 
 ## Features
 
